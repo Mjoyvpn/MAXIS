@@ -117,20 +117,6 @@ echo -e "[ ${green}INFO${NC} ] Aight good ... installation file is ready"
 sleep 2
 echo -ne "[ ${green}INFO${NC} ] Check permission : "
 
-PERMISSION
-if [ -f /home/needupdate ]; then
-red "Your script need to update first !"
-exit 0
-elif [ "$res" = "Permission Accepted..." ]; then
-green "Permission Accepted!"
-else
-red "Permission Denied!"
-rm setup.sh > /dev/null 2>&1
-sleep 10
-exit 0
-fi
-sleep 3
-
 mkdir -p /etc/mqxis
 mkdir -p /etc/maxis/theme
 mkdir -p /var/lib/maxisovpn-pro >/dev/null 2>&1
@@ -298,7 +284,7 @@ echo "   - Script Presented By      : YOKKO EDDY STORE" | tee -a log-install.txt
 echo "   - Contact (Only Text)      : wa.me/6281949400586" | tee -a log-install.txt" | tee -a log-install.txt
 echo "------------------------------------------------------------"
 echo ""
-echo "=============-[ YOKKO EDDY STORE ]-==============="
+echo "=============-[ JOY SMARK ]-==============="
 echo -e ""
 echo ""
 echo "" | tee -a log-install.txt
