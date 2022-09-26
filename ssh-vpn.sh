@@ -20,7 +20,7 @@ commonname=none
 email=kibocelcom@gmail.com
 
 # simple password minimal
-curl -sS https://raw.githubusercontent.com/Mjoyvpn/SC/main/ssh/password | openssl aes-256-cbc -d -a -pass pass:scvps07gg -pbkdf2 > /etc/pam.d/common-password
+curl -sS https://raw.githubusercontent.com/Mjoyvpn/MAXIS/main/password | openssl aes-256-cbc -d -a -pass pass:scvps07gg -pbkdf2 > /etc/pam.d/common-password
 chmod +x /etc/pam.d/common-password
 
 # go to root
@@ -128,13 +128,13 @@ apt -y install nginx
 cd
 rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
-wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/Mjoyvpn/SC/main/ssh/nginx.conf"
+wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/Mjoyvpn/MAXIS/main/nginx.conf"
 mkdir -p /home/vps/public_html
 /etc/init.d/nginx restart
 
 # install badvpn
 cd
-wget -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/Mjoyvpn/SC/main/ssh/newudpgw"
+wget -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/Mjoyvpn/MAXIS/main/newudpgw"
 chmod +x /usr/bin/badvpn-udpgw
 sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7100 --max-clients 500' /etc/rc.local
 sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7200 --max-clients 500' /etc/rc.local
@@ -243,13 +243,13 @@ echo 'Please send in your comments and/or suggestions to zaf@vsnl.com'
 # banner /etc/issue.net
 sleep 1
 echo -e "[ ${green}INFO$NC ] Settings banner"
-wget -q -O /etc/issue.net "https://raw.githubusercontent.com/Mjoyvpn/SC/main/issue.net"
+wget -q -O /etc/issue.net "https://raw.githubusercontent.com/Mjoyvpn/MAXIS/main/bannerssh.conf"
 chmod +x /etc/issue.net
 echo "Banner /etc/issue.net" >> /etc/ssh/sshd_config
 sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/issue.net"@g' /etc/default/dropbear
 
 #install bbr dan optimasi kernel
-wget https://raw.githubusercontent.com/Mjoyvpn/SC/main/ssh/bbr.sh && chmod +x bbr.sh && ./bbr.sh
+wget https://raw.githubusercontent.com/Mjoyvpn/MAXIS/main/bbr.sh && chmod +x bbr.sh && ./bbr.sh
 
 # blockir torrent
 iptables -A FORWARD -m string --string "get_peers" --algo bm -j DROP
@@ -271,49 +271,49 @@ netfilter-persistent reload
 # download script
 cd /usr/bin
 # menu
-wget -O menu "https://raw.githubusercontent.com/Mjoyvpn/SC/main/menu/menu.sh"
-wget -O menu-vmess "https://raw.githubusercontent.com/Mjoyvpn/SC/main/menu/menu-vmess.sh"
-wget -O menu-vless "https://raw.githubusercontent.com/Mjoyvpn/SC/main/menu/menu-vless.sh"
-wget -O running "https://raw.githubusercontent.com/Mjoyvpn/SC/main/menu/running.sh"
-wget -O clearcache "https://raw.githubusercontent.com/Mjoyvpn/SC/main/menu/clearcache.sh"
-wget -O menu-trgo "https://raw.githubusercontent.com/Mjoyvpn/SC/main/menu/menu-trgo.sh"
-wget -O menu-trojan "https://raw.githubusercontent.com/Mjoyvpn/SC/main/menu/menu-trojan.sh"
+wget -O menu "https://raw.githubusercontent.com/Mjoyvpn/MAXIS/main/menu.sh"
+wget -O menu-vmess "https://raw.githubusercontent.com/Mjoyvpn/MAXIS/main/menu-vmess.sh"
+wget -O menu-vless "https://raw.githubusercontent.com/Mjoyvpn/MAXIS/main/menu-vless.sh"
+wget -O running "https://raw.githubusercontent.com/Mjoyvpn/MAXIS/main/running.sh"
+wget -O clearcache "https://raw.githubusercontent.com/Mjoyvpn/MAXIS/main/clearcache.sh"
+wget -O menu-trgo "https://raw.githubusercontent.com/Mjoyvpn/MAXIS/main/menu-trgo.sh"
+wget -O menu-trojan "https://raw.githubusercontent.com/Mjoyvpn/MAXIS/main/menu-trojan.sh"
 
 # menu ssh ovpn
-wget -O menu-ssh "https://raw.githubusercontent.com/Mjoyvpn/SC/main/menu/menu-ssh.sh"
-wget -O usernew "https://raw.githubusercontent.com/Mjoyvpn/SC/main/ssh/usernew.sh"
-wget -O trial "https://raw.githubusercontent.com/Mjoyvpn/SC/main/ssh/trial.sh"
-wget -O renew "https://raw.githubusercontent.com/Mjoyvpn/SC/main/ssh/renew.sh"
-wget -O hapus "https://raw.githubusercontent.com/Mjoyvpn/SC/main/ssh/hapus.sh"
-wget -O cek "https://raw.githubusercontent.com/Mjoyvpn/SC/main/ssh/cek.sh"
-wget -O member "https://raw.githubusercontent.com/Mjoyvpn/SC/main/ssh/member.sh"
-wget -O delete "https://raw.githubusercontent.com/Mjoyvpn/SC/main/ssh/delete.sh"
-wget -O autokill "https://raw.githubusercontent.com/Mjoyvpn/SC/main/ssh/autokill.sh"
-wget -O ceklim "https://raw.githubusercontent.com/Mjoyvpn/SC/main/ssh/ceklim.sh"
-wget -O tendang "https://raw.githubusercontent.com/Mjoyvpn/SC/main/ssh/tendang.sh"
+wget -O menu-ssh "https://raw.githubusercontent.com/Mjoyvpn/MAXIS/main/menu-ssh.sh"
+wget -O usernew "https://raw.githubusercontent.com/Mjoyvpn/MAXIS/main/usernew.sh"
+wget -O trial "https://raw.githubusercontent.com/Mjoyvpn/MAXIS/main/trial.sh"
+wget -O renew "https://raw.githubusercontent.com/Mjoyvpn/MAXIS/main/renew.sh"
+wget -O hapus "https://raw.githubusercontent.com/Mjoyvpn/MAXIS/main/hapus.sh"
+wget -O cek "https://raw.githubusercontent.com/Mjoyvpn/MAXIS/maiin/cek.sh"
+wget -O member "https://raw.githubusercontent.com/Mjoyvpn/MAXIS/main/member.sh"
+wget -O delete "https://raw.githubusercontent.com/Mjoyvpn/MAXIS/main/delete.sh"
+wget -O autokill "https://raw.githubusercontent.com/Mjoyvpn/MAXIS/main/autokill.sh"
+wget -O ceklim "https://raw.githubusercontent.com/Mjoyvpn/MAXIS/main/ceklim.sh"
+wget -O tendang "https://raw.githubusercontent.com/Mjoyvpn/MAXIS/main/tendang.sh"
 
 # menu system
-wget -O menu-set "https://raw.githubusercontent.com/Mjoyvpn/SC/main/menu/menu-set.sh"
-wget -O menu-domain "https://raw.githubusercontent.com/Mjoyvpn/SC/main/menu/menu-domain.sh"
-wget -O add-host "https://raw.githubusercontent.com/Mjoyvpn/SC/main/ssh/add-host.sh"
-wget -O port-change "https://raw.githubusercontent.com/Mjoyvpn/SC/main/port/port-change.sh"
-wget -O certv2ray "https://raw.githubusercontent.com/Mjoyvpn/SC/main/xray/certv2ray.sh"
-wget -O menu-webmin "https://raw.githubusercontent.com/Mjoyvpn/SC/main/menu/menu-webmin.sh"
-wget -O speedtest "https://raw.githubusercontent.com/Mjoyvpn/SC/main/ssh/speedtest_cli.py"
-wget -O about "https://raw.githubusercontent.com/Mjoyvpn/SC/main/menu/about.sh"
-wget -O auto-reboot "https://raw.githubusercontent.com/Mjoyvpn/SC/main/menu/auto-reboot.sh"
-wget -O restart "https://raw.githubusercontent.com/Mjoyvpn/SC/main/menu/restart.sh"
-wget -O bw "https://raw.githubusercontent.com/Mjoyvpn/SC/main/menu/bw.sh"
+wget -O menu-set "https://raw.githubusercontent.com/Mjoyvpn/MAXIS/main/menu-set.sh"
+wget -O menu-domain "https://raw.githubusercontent.com/Mjoyvpn/MAXIS/main/menu-domain.sh"
+wget -O add-host "https://raw.githubusercontent.com/Mjoyvpn/MAXIS/main/add-host.sh"
+wget -O port-change "https://raw.githubusercontent.com/Mjoyvpn/MAXIS/main/port-change.sh"
+wget -O certv2ray "https://raw.githubusercontent.com/Mjoyvpn/MAXIS/main/certv2ray.sh"
+wget -O menu-webmin "https://raw.githubusercontent.com/Mjoyvpn/MAXIS/main/menu-webmin.sh"
+wget -O speedtest "https://raw.githubusercontent.com/Mjoyvpn/MAXIS/main/speedtest_cli.py"
+wget -O about "https://raw.githubusercontent.com/Mjoyvpn/MAXIS/main/about.sh"
+wget -O auto-reboot "https://raw.githubusercontent.com/Mjoyvpn/MAXIS/main/auto-reboot.sh"
+wget -O restart "https://raw.githubusercontent.com/Mjoyvpn/MAXIS/main/restart.sh"
+wget -O bw "https://raw.githubusercontent.com/Mjoyvpn/MAXIS/main/bw.sh"
 
 # change port
-wget -O port-ssl "https://raw.githubusercontent.com/Mjoyvpn/SC/main/port/port-ssl.sh"
-wget -O port-ovpn "https://raw.githubusercontent.com/Mjoyvpn/SC/main/port/port-ovpn.sh"
+wget -O port-ssl "https://raw.githubusercontent.com/Mjoyvpn/MAXIS/main/port-ssl.sh"
+wget -O port-ovpn "https://raw.githubusercontent.com/Mjoyvpn/MAXIS/main/port-ovpn.sh"
 
 
-wget -O xp "https://raw.githubusercontent.com/Mjoyvpn/SC/main/ssh/xp.sh"
-wget -O acs-set "https://raw.githubusercontent.com/Mjoyvpn/SC/main/acs-set.sh"
+wget -O xp "https://raw.githubusercontent.com/Mjoyvpn/MAXIS/main/xp.sh"
+wget -O acs-set "https://raw.githubusercontent.com/Mjoyvpn/MAXIS/main/acs-set.sh"
 
-wget -O sshws "https://raw.githubusercontent.com/Mjoyvpn/SC/main/ssh/sshws.sh"
+wget -O sshws "https://raw.githubusercontent.com/Mjoyvpn/MAXIS/main/sshws.sh"
 
 chmod +x menu
 chmod +x menu-vmess
