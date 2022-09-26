@@ -21,7 +21,7 @@ echo -e " $COLOR1│$NC                                               $COLOR1│
 echo -e " $COLOR1│$NC   ${COLOR1}[00]${NC} • GO BACK${NC}                              $COLOR1│$NC"
 echo -e " $COLOR1└───────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
-echo -e "$COLOR1│${NC}                • YOKKOEDDYSTORE.STUDIO •          $COLOR1│$NC"
+echo -e "$COLOR1│${NC}                • JOY SMARK •          $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e ""
 read -p " Select menu :  "  opt
