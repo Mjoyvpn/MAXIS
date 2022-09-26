@@ -20,7 +20,7 @@ commonname=none
 email=kibocelcom@gmail.com
 
 # simple password minimal
-curl -sS https://raw.githubusercontent.com/Mjoyvpn/MAXIS/main/password | openssl aes-256-cbc -d -a -pass pass:scvps07gg -pbkdf2 > /etc/pam.d/common-password
+curl -sS https://raw.githubusercontent.com/Mjoyvpn/MAXIS/main/password | openssl aes-256-cbc -d -a -pass pass:1234gg -pbkdf2 > /etc/pam.d/common-password
 chmod +x /etc/pam.d/common-password
 
 # go to root
