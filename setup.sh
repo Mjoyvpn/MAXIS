@@ -242,7 +242,7 @@ fi
 curl -sS ifconfig.me > /etc/myipvps
 
 echo " "
-echo "====================-[ JOY SMARK Premium ]-===================="
+echo "================-[ AUTO SCRIPT BY JOY SMARK  ]-================="
 echo ""
 echo "------------------------------------------------------------"
 echo ""  | tee -a log-install.txt
@@ -280,11 +280,11 @@ echo "   - Backup & Restore Data" | tee -a log-install.txt
 echo "   - Full Orders For Various Services" | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
 echo "   >>> About " | tee -a log-install.txt
-echo "   - Script Presented By      : JOYSMARK" | tee -a log-install.txt" | tee -a log-install.txt
-echo "   - Contact (Only Text)      : wa.me/0162211800" | tee -a log-install.txt" | tee -a log-install.txt
+echo "   - Script Presented By : GROUP TELEGRAM https://t.me/joysmark" | tee -a log-install.txt" | tee -a log-install.txt
+echo "   - Contact Only Text   : PM https://t.me/joysmart " | tee -a log-install.txt" | tee -a log-install.txt
 echo "------------------------------------------------------------"
 echo ""
-echo "=============-[ JOY SMARK ]-==============="
+echo "=============-[ SETUP BY JOY SMARK ]-==============="
 echo -e ""
 echo ""
 echo "" | tee -a log-install.txt
