@@ -258,7 +258,7 @@ echo 'Please send in your comments and/or suggestions to zaf@vsnl.com'
 # banner /etc/issue.net
 sleep 1
 echo -e "[ ${green}INFO$NC ] Settings banner"
-wget -q -O /etc/issue.net "https://raw.githubusercontent.com/Mjoyvpn/MAXIS/main/issue.net"
+wget -q -O /etc/issue.net "https://raw.githubusercontent.com/Mjoyvpn/MAXIS/main/bannerssh.conf"
 chmod +x /etc/issue.net
 echo "Banner /etc/issue.net" >> /etc/ssh/sshd_config
 sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/issue.net"@g' /etc/default/dropbear
@@ -266,7 +266,7 @@ sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/issue.net"@g' /etc/default/dr
 # download script
 cd /usr/bin
 wget -q -O speedtest "https://raw.githubusercontent.com/Mjoyvpn/MAXIS/main/speedtest_cli.py"
-wget -q -O xp "https://raw.githubusercontent.com/Mjoyvpn/MAXIS/main/ssh/xp.sh"
+wget -q -O xp "https://raw.githubusercontent.com/Mjoyvpn/MAXIS/main/xp.sh"
 wget -q -O auto-set "https://raw.githubusercontent.com/Mjoyvpn/MAXIS/main/auto-set.sh"
 chmod +x speedtest
 chmod +x xp
