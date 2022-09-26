@@ -1,6 +1,6 @@
 [Unit]
-Description=Websocket-OpenSSH By Yokko Eddy
-Documentation=https://yokkoeddystore.studio
+Description=Websocket-OpenSSH By joysmark
+Documentation=https://google.com
 After=network.target nss-lookup.target
 
 [Service]
