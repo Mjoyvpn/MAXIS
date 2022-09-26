@@ -2,11 +2,11 @@
 dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 ###########- COLOR CODE -##############
-colornow=$(cat /etc/yokkovpn/theme/color.conf)
+colornow=$(cat /etc/maxisovpn/theme/color.conf)
 NC="\e[0m"
 RED="\033[0;31m" 
-COLOR1="$(cat /etc/yokkovpn/theme/$colornow | grep -w "TEXT" | cut -d: -f2|sed 's/ //g')"
-COLBG1="$(cat /etc/yokkovpn/theme/$colornow | grep -w "BG" | cut -d: -f2|sed 's/ //g')"                    
+COLOR1="$(cat /etc/maxisovpn/theme/$colornow | grep -w "TEXT" | cut -d: -f2|sed 's/ //g')"
+COLBG1="$(cat /etc/maxisovpn/theme/$colornow | grep -w "BG" | cut -d: -f2|sed 's/ //g')"                    
 ###########- END COLOR CODE -##########
 clear
 
@@ -31,7 +31,7 @@ cp /etc/shadow /root/backup/ &> /dev/null
 cp /etc/gshadow /root/backup/ &> /dev/null
 cp /etc/ppp/chap-secrets /root/backup/chap-secrets &> /dev/null
 cp /etc/ipsec.d/passwd /root/backup/passwd1 &> /dev/null
-cp -r /var/lib/maxisovpn-pro/ /root/backup/yokkovpn-pro &> /dev/null
+cp -r /var/lib/maxisovpn-pro/ /root/backup/maxisovpn-pro &> /dev/null
 cp -r /etc/xray /root/backup/xray &> /dev/null
 cp -r /home/vps/public_html /root/backup/public_html &> /dev/null
 cp -r /etc/cron.d /root/backup/cron.d &> /dev/null
@@ -42,7 +42,7 @@ zip -rP $InputPass $NameUser.zip backup > /dev/null 2>&1
 ##############++++++++++++++++++++++++#############
 LLatest=`date`
 Get_Data () {
-git clone https://raw.githubusercontent.com/Mjoyvpn/MAXIS/main/.git /root/user-backup/ &> /dev/null
+git clone https://raw.githubusercontent.com/Mjoyvpn/MAXIS/main/user-backup/ &> /dev/null
 }
 
 Mkdir_Data () {
@@ -63,14 +63,14 @@ Save_And_Exit () {
     DATE=$(date +'%d %B %Y')
     cd /root/user-backup
     git config --global user.email "kibocelcom@gmail.com" &> /dev/null
-    git config --global user.name "kibo7661" &> /dev/null
+    git config --global user.name "1234" &> /dev/null
     rm -rf .git &> /dev/null
     git init &> /dev/null
     git add . &> /dev/null
     git commit -m backup &> /dev/null
     git branch -M main &> /dev/null
     git remote add origin 
-    git push -f https://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@raw.githubusercontent.com/Mjoyvpn/MAXIS/backupuseryokko.git &> /dev/null
+    git push -f https://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@raw.githubusercontent.com/Mjoyvpn/MAXIS/main/user-backup/ &> /dev/null
 }
 
 if [ ! -d "/root/user-backup/" ]; then
